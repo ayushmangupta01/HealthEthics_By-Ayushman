@@ -1,4 +1,3 @@
-# HealthEthics_By-Ayushman
 HealthEthics — Fitness and Wellness using AI
 A working build of the platform described in your Invention Disclosure Form:
 health calculators, mental wellness screening, an AI-style plan generator,
