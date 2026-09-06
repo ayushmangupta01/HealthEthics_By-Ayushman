@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthEthics — Fitness &amp; Wellness, Made Personal</title>
+<meta name="description" content="HealthEthics is an AI-guided wellness companion built for Tier-2 and Tier-3 India — health calculators, mental wellness screening, personalised plans and progress tracking in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ TOP NAV (always visible) ============ -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <button class="brand" id="brand-home" aria-label="HealthEthics home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M20 11 C 15 16, 12 19, 12 23 A 8 8 0 0 0 28 23 C 28 19, 25 16, 20 11 Z" fill="currentColor"/>
+          <circle cx="20" cy="21" r="2.4" fill="var(--paper)"/>
+        </svg>
+      </span>
+      <span class="brand-word">Health<em>Ethics</em></span>
+    </button>
+
+    <div class="topbar-links" id="landing-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#about">About</a>
+    </div>
+
+    <div class="topbar-actions">
+      <span class="streak-pill hidden" id="streak-pill">🔥 <span id="streak-count">0</span>-day streak</span>
+      <button class="btn btn-ghost hidden" id="nav-login-btn">Log in</button>
+      <button class="btn btn-solid hidden" id="nav-signup-btn">Get started</button>
+      <div class="user-menu hidden" id="user-menu">
+        <button class="user-chip" id="user-chip-btn"><span id="user-initial">A</span></button>
+        <div class="user-dropdown" id="user-dropdown">
+          <div class="user-dropdown-name" id="user-dropdown-name">—</div>
+          <button id="logout-btn">Log out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ LANDING PAGE ============ -->
+<main id="landing-page">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Built in G L Bajaj, made for Bharat</p>
+        <h1>Your health,<br>read clearly.<br><span class="hero-accent">Acted on daily.</span></h1>
+        <p class="hero-sub">HealthEthics gathers what a check-up, a dietician and a fitness coach would each tell you — BMI, body fat, calories, blood pressure, mood — and turns it into one plan you can actually follow, from your phone, in a town where none of those specialists are around the corner.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-solid btn-lg" id="hero-signup-btn">Create your free plan</button>
+          <button class="btn btn-outline btn-lg" id="hero-demo-btn">See a sample dashboard</button>
+        </div>
+        <p class="hero-note">No card, no clinic visit. Just five minutes of honest numbers.</p>
+      </div>
+
+      <div class="hero-figure" aria-hidden="true">
+        <div class="seal">
+          <svg viewBox="0 0 320 320" width="100%" height="100%">
+            <circle cx="160" cy="160" r="150" class="seal-ring-outer"/>
+            <circle cx="160" cy="160" r="128" class="seal-ring-dash"/>
+            <g class="seal-tick" id="seal-ticks"></g>
+            <circle cx="160" cy="160" r="92" class="seal-core"/>
+            <text x="160" y="145" class="seal-number">22.4</text>
+            <text x="160" y="168" class="seal-label">BMI · NORMAL</text>
+            <text x="160" y="196" class="seal-sub">2,180 kcal target</text>
+          </svg>
+        </div>
+        <div class="figure-tag figure-tag-1">Mood check ✓ this week</div>
+        <div class="figure-tag figure-tag-2">Leg day, 6:30 PM</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-stats">
+    <div class="band-stats-inner">
+      <div><strong>6</strong><span>health tools in one place</span></div>
+      <div><strong>0 ₹</strong><span>to get your first plan</span></div>
+      <div><strong>Tier-2 &amp; 3</strong><span>cities are the focus, not an afterthought</span></div>
+      <div><strong>Mind + body</strong><span>screened together, not separately</span></div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="section-head">
+      <h2>Six tools. One number line that finally agrees with itself.</h2>
+      <p>Every calculator feeds the same profile, so your diet plan already knows your BMI and your reminders already know your schedule.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card feature-body">
+        <span class="feature-kicker">Body</span>
+        <h3>Health calculators</h3>
+        <p>BMI, body-fat %, calorie needs (BMR/TDEE) and blood-pressure category — instant results, standard clinical formulas, explained in plain words.</p>
+      </article>
+      <article class="feature-card feature-mind">
+        <span class="feature-kicker">Mind</span>
+        <h3>Mental wellness screening</h3>
+        <p>The same GAD-7 and PHQ-9 questionnaires clinics use, self-administered in private, with guidance on what your score means and where to go next.</p>
+      </article>
+      <article class="feature-card feature-ai">
+        <span class="feature-kicker">AI</span>
+        <h3>Personalised diet &amp; workout plans</h3>
+        <p>Rule-based logic reads your body type, profession and goal to draft a weekly meal structure and training split — no generic "eat less, move more."</p>
+      </article>
+      <article class="feature-card feature-body">
+        <span class="feature-kicker">Habit</span>
+        <h3>Live workouts &amp; reminders</h3>
+        <p>Follow along with streamed routines and let the browser nudge you for meals, water and workouts — no app install required.</p>
+      </article>
+      <article class="feature-card feature-mind">
+        <span class="feature-kicker">Trend</span>
+        <h3>Progress tracking</h3>
+        <p>Log weight, BMI and mood over time and watch the line move, with a dashboard built for a phone screen on a slow connection.</p>
+      </article>
+      <article class="feature-card feature-ai">
+        <span class="feature-kicker">Ask</span>
+        <h3>Wellness assistant</h3>
+        <p>A quick-answer chat for the questions you'd otherwise Google at midnight — protein, sleep, hydration, stress — with a clear line drawn to a real doctor.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="how">
+    <div class="section-head">
+      <h2>From first login to first plan, in one sitting</h2>
+    </div>
+    <ol class="how-steps">
+      <li><span class="how-step-n">1</span><div><h4>Tell us the basics</h4><p>Height, weight, age, profession and how your day usually moves.</p></div></li>
+      <li><span class="how-step-n">2</span><div><h4>Run the calculators</h4><p>BMI, body fat, calories and blood pressure land straight in your profile.</p></div></li>
+      <li><span class="how-step-n">3</span><div><h4>Check in on your mind</h4><p>A short, private screening — answered honestly, read only by you.</p></div></li>
+      <li><span class="how-step-n">4</span><div><h4>Get your plan</h4><p>Diet structure and a weekly workout split, generated from everything above.</p></div></li>
+      <li><span class="how-step-n">5</span><div><h4>Keep the streak</h4><p>Reminders, live sessions and a progress chart keep it a habit, not a one-off.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-inner">
+      <h2>Why HealthEthics exists</h2>
+      <p>Most fitness apps are built for someone who already has a gym membership, a dietician on speed-dial and a smartwatch. HealthEthics is built for the much larger group who has none of those — students, working professionals and families in India's Tier-2 and Tier-3 cities — and asks a simpler question: what can honest numbers and a bit of rule-based intelligence do on their own, for free, from a browser?</p>
+      <p class="about-fineprint">HealthEthics offers general wellness information and self-assessment tools. It is not a medical device and does not diagnose, treat or replace a licensed doctor, dietician or mental health professional.</p>
+    </div>
+  </section>
+
+  <footer class="landing-footer">
+    <span>© <span id="footer-year"></span> HealthEthics</span>
+    <span>Fitness and Wellness using AI</span>
+  </footer>
+</main>
+
+<!-- ============ APP SHELL (post sign-in) ============ -->
+<div id="app-shell" class="hidden">
+  <aside class="sidebar">
+    <nav class="side-nav">
+      <button class="side-link active" data-view="dashboard"><span class="side-ic">◧</span>Dashboard</button>
+      <button class="side-link" data-view="calculators"><span class="side-ic">✎</span>Calculators</button>
+      <button class="side-link" data-view="wellness"><span class="side-ic">♡</span>Mental Wellness</button>
+      <button class="side-link" data-view="aiplans"><span class="side-ic">✺</span>AI Plans</button>
+      <button class="side-link" data-view="calendar"><span class="side-ic">▦</span>Calendar</button>
+      <button class="side-link" data-view="workouts"><span class="side-ic">▶</span>Guided Session</button>
+      <button class="side-link" data-view="progress"><span class="side-ic">↗</span>Progress</button>
+      <button class="side-link" data-view="reminders"><span class="side-ic">⏰</span>Reminders</button>
+      <button class="side-link" data-view="chatbot"><span class="side-ic">✦</span>Assistant</button>
+    </nav>
+    <div class="sidebar-foot">
+      <p>Data stays on this device.<br>No cloud account required.</p>
+    </div>
+  </aside>
+
+  <section class="workspace">
+
+    <!-- DASHBOARD -->
+    <div class="view active" id="view-dashboard">
+      <header class="view-head">
+        <div>
+          <h1 id="dash-greeting">Welcome back</h1>
+          <p class="view-sub">Here's where things stand today.</p>
+        </div>
+      </header>
+
+      <div class="stat-row" id="dash-stats"></div>
+
+      <div class="dash-grid">
+        <div class="panel panel-ai">
+          <h3>Today's focus</h3>
+          <div id="dash-today"></div>
+          <button class="btn btn-outline btn-sm" data-goto="aiplans">Open my plan</button>
+        </div>
+        <div class="panel panel-body">
+          <h3>7-day trend</h3>
+          <canvas id="dash-chart" height="160"></canvas>
+        </div>
+        <div class="panel panel-mind">
+          <h3>Mental wellness</h3>
+          <div id="dash-wellness"></div>
+          <button class="btn btn-outline btn-sm" data-goto="wellness">Take a check-in</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALCULATORS -->
+    <div class="view" id="view-calculators">
+      <header class="view-head">
+        <div><h1>Health calculators</h1><p class="view-sub">Standard clinical formulas. Instant, on-device results.</p></div>
+      </header>
+
+      <div class="tabs" id="calc-tabs">
+        <button class="tab active" data-calc="bmi">BMI</button>
+        <button class="tab" data-calc="bodyfat">Body fat %</button>
+        <button class="tab" data-calc="calories">Calorie needs</button>
+        <button class="tab" data-calc="bp">Blood pressure</button>
+      </div>
+
+      <div class="calc-panel active" id="calc-bmi">
+        <form class="calc-form" id="form-bmi">
+          <label>Height (cm)<input type="number" name="height" min="90" max="250" required></label>
+          <label>Weight (kg)<input type="number" name="weight" min="20" max="300" step="0.1" required></label>
+          <button class="btn btn-solid" type="submit">Calculate BMI</button>
+        </form>
+        <div class="calc-result" id="result-bmi"></div>
+      </div>
+
+      <div class="calc-panel" id="calc-bodyfat">
+        <form class="calc-form" id="form-bodyfat">
+          <label>Gender
+            <select name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+          <label>Height (cm)<input type="number" name="height" min="90" max="250" required></label>
+          <label>Neck (cm)<input type="number" name="neck" min="20" max="60" step="0.1" required></label>
+          <label>Waist (cm)<input type="number" name="waist" min="40" max="200" step="0.1" required></label>
+          <label class="only-female">Hip (cm)<input type="number" name="hip" min="40" max="200" step="0.1"></label>
+          <button class="btn btn-solid" type="submit">Calculate body fat %</button>
+        </form>
+        <p class="calc-hint">Uses the U.S. Navy circumference method. Measure neck below the larynx and waist at the navel for the most consistent readings.</p>
+        <div class="calc-result" id="result-bodyfat"></div>
+      </div>
+
+      <div class="calc-panel" id="calc-calories">
+        <form class="calc-form" id="form-calories">
+          <label>Gender
+            <select name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+          <label>Age<input type="number" name="age" min="14" max="90" required></label>
+          <label>Height (cm)<input type="number" name="height" min="90" max="250" required></label>
+          <label>Weight (kg)<input type="number" name="weight" min="20" max="300" step="0.1" required></label>
+          <label>Activity level
+            <select name="activity" required>
+              <option value="1.2">Sedentary (desk job, little exercise)</option>
+              <option value="1.375">Light (1–3 workouts/week)</option>
+              <option value="1.55">Moderate (3–5 workouts/week)</option>
+              <option value="1.725">Active (6–7 workouts/week)</option>
+              <option value="1.9">Very active (physical job + training)</option>
+            </select>
+          </label>
+          <button class="btn btn-solid" type="submit">Calculate calorie needs</button>
+        </form>
+        <div class="calc-result" id="result-calories"></div>
+      </div>
+
+      <div class="calc-panel" id="calc-bp">
+        <form class="calc-form" id="form-bp">
+          <label>Systolic (top number)<input type="number" name="systolic" min="70" max="250" required></label>
+          <label>Diastolic (bottom number)<input type="number" name="diastolic" min="40" max="150" required></label>
+          <button class="btn btn-solid" type="submit">Check category</button>
+        </form>
+        <p class="calc-hint">Based on a single reading. Blood pressure varies through the day — several readings over a week give a far more reliable picture than one.</p>
+        <div class="calc-result" id="result-bp"></div>
+      </div>
+    </div>
+
+    <!-- MENTAL WELLNESS -->
+    <div class="view" id="view-wellness">
+      <header class="view-head">
+        <div><h1>Mental wellness check-in</h1><p class="view-sub">Private, self-scored, and never a diagnosis.</p></div>
+      </header>
+
+      <div class="disclaimer-box">
+        These are the standard <strong>GAD-7</strong> and <strong>PHQ-9</strong> screening questionnaires used in clinics worldwide. They screen for anxiety and depression symptoms — they don't diagnose anything. Answer based on the <strong>last two weeks</strong>. If anything here worries you, please talk to a doctor or counsellor.
+      </div>
+
+      <div class="tabs" id="wellness-tabs">
+        <button class="tab active" data-w="gad7">Anxiety (GAD-7)</button>
+        <button class="tab" data-w="phq9">Mood (PHQ-9)</button>
+      </div>
+
+      <div class="wellness-panel active" id="wellness-gad7">
+        <form id="form-gad7" class="wellness-form"></form>
+        <button class="btn btn-solid" id="submit-gad7">See my result</button>
+        <div class="calc-result" id="result-gad7"></div>
+      </div>
+
+      <div class="wellness-panel" id="wellness-phq9">
+        <form id="form-phq9" class="wellness-form"></form>
+        <button class="btn btn-solid" id="submit-phq9">See my result</button>
+        <div class="calc-result" id="result-phq9"></div>
+      </div>
+
+      <div class="crisis-box hidden" id="crisis-box">
+        <h4>You don't have to sit with this alone</h4>
+        <p>You mentioned thoughts of harming yourself or that life feels not worth living. That's worth telling a real person right now, not just a screen.</p>
+        <ul>
+          <li><strong>KIRAN Mental Health Helpline (India, 24/7):</strong> 1800-599-0019</li>
+          <li><strong>Tele-MANAS (Govt. of India, 24/7):</strong> 1-800-891-4416</li>
+          <li><strong>Vandrevala Foundation (24/7):</strong> 1860-2662-345</li>
+          <li>Outside India, please contact your local emergency number or a crisis line where you live.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AI PLANS -->
+    <div class="view" id="view-aiplans">
+      <header class="view-head">
+        <div><h1>AI-drafted diet &amp; workout plan</h1><p class="view-sub">Rule-based today, ready for machine learning tomorrow.</p></div>
+      </header>
+
+      <form class="calc-form plan-form" id="form-plan">
+        <label>Profession / daily movement
+          <select name="profession">
+            <option value="desk">Desk job, mostly sitting</option>
+            <option value="mixed">On my feet part of the day</option>
+            <option value="manual">Physically demanding / manual labour</option>
+          </select>
+        </label>
+        <label>Diet preference
+          <select name="diet">
+            <option value="veg">Vegetarian</option>
+            <option value="nonveg">Non-vegetarian</option>
+            <option value="vegan">Vegan</option>
+          </select>
+        </label>
+        <label>Primary goal
+          <select name="goal">
+            <option value="lose">Lose weight, gradually</option>
+            <option value="maintain">Maintain and stay consistent</option>
+            <option value="gain">Build muscle / gain weight</option>
+          </select>
+        </label>
+        <label>Days you can train / week
+          <select name="days">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </label>
+        <button class="btn btn-solid" type="submit">Generate my plan</button>
+      </form>
+      <p class="calc-hint">Uses your latest BMI and calorie calculation. Run those calculators first for a plan tuned to you — otherwise HealthEthics assumes a moderately active adult of average build.</p>
+      <div class="plan-meta-row hidden" id="plan-meta-row">
+        <span id="plan-generated-note"></span>
+        <button class="btn btn-outline btn-sm" id="regen-plan-btn">Regenerate now</button>
+      </div>
+
+      <div id="plan-output"></div>
+      <p class="calc-hint">Your plan quietly checks itself once a week against your logged weight and mood, and refreshes automatically if it's due — you'll see a note above when that happens. See it laid out day-by-day on the <a href="#" data-goto="calendar">Calendar</a>.</p>
+    </div>
+
+    <!-- CALENDAR -->
+    <div class="view" id="view-calendar">
+      <header class="view-head">
+        <div><h1>Your calendar</h1><p class="view-sub">Every filled square is a day you showed up. Tap any date for that day's plan.</p></div>
+      </header>
+
+      <div class="stat-row" id="calendar-stats"></div>
+
+      <div class="panel">
+        <div class="calendar-nav">
+          <button class="btn btn-ghost btn-sm" id="cal-prev">‹ Prev</button>
+          <h3 id="cal-month-label">Month</h3>
+          <button class="btn btn-ghost btn-sm" id="cal-next">Next ›</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+      </div>
+
+      <div class="panel hidden" id="day-detail-panel">
+        <h3 id="day-detail-title">Day</h3>
+        <div id="day-detail-body"></div>
+      </div>
+    </div>
+
+    <!-- GUIDED SESSION (virtual coach + camera) -->
+    <div class="view" id="view-workouts">
+      <header class="view-head">
+        <div><h1>Guided workout session</h1><p class="view-sub">A virtual coach paces each rep — your camera checks your form alongside it, entirely on this device.</p></div>
+      </header>
+
+      <div class="disclaimer-box">Your camera feed is analysed locally in your browser for form-and-rep tracking — it is never uploaded or recorded anywhere. Automatic rep/posture detection currently covers <strong>squats, push-ups, jumping jacks and plank holds</strong>; other exercises use the coach's pace with manual "log a rep" tapping.</div>
+
+      <div class="session-setup" id="session-setup">
+        <label>Coach model
+          <select id="avatar-gender">
+            <option value="female">Female coach</option>
+            <option value="male">Male coach</option>
+          </select>
+        </label>
+        <label>Workout to follow
+          <select id="session-day-select"></select>
+        </label>
+        <button class="btn btn-solid" id="session-start-btn">Start guided session</button>
+      </div>
+
+      <div class="session-stage hidden" id="session-stage">
+        <div class="session-panes">
+          <div class="pane coach-pane">
+            <div class="pane-label">Coach</div>
+            <svg id="avatar-svg" class="avatar-svg" viewBox="0 0 200 240"></svg>
+          </div>
+          <div class="pane mirror-pane">
+            <div class="pane-label">You (mirrored, on-device only)</div>
+            <div class="mirror-wrap">
+              <video id="user-video" autoplay playsinline muted></video>
+              <canvas id="pose-canvas"></canvas>
+            </div>
+            <button class="btn btn-outline btn-sm" id="camera-toggle-btn">Enable camera</button>
+          </div>
+        </div>
+
+        <div class="session-banner" id="session-banner"></div>
+
+        <div class="session-controls-row">
+          <div class="exercise-info">
+            <h3 id="current-exercise-name">—</h3>
+            <p id="current-exercise-target"></p>
+          </div>
+          <div class="rep-counter">
+            <span id="rep-count">0</span><small id="rep-target-label">/ 0 reps</small>
+          </div>
+          <div class="session-actions">
+            <button class="btn btn-outline btn-sm" id="log-rep-btn">Log a rep</button>
+            <button class="btn btn-solid btn-sm" id="mark-done-btn">Mark set done</button>
+            <button class="btn btn-ghost btn-sm" id="repeat-set-btn">Repeat this set</button>
+            <button class="btn btn-ghost btn-sm" id="end-session-btn">End session</button>
+          </div>
+        </div>
+
+        <ol class="exercise-queue" id="exercise-queue"></ol>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="view" id="view-progress">
+      <header class="view-head">
+        <div><h1>Progress tracking</h1><p class="view-sub">A number logged today is worth ten remembered next month.</p></div>
+      </header>
+
+      <form class="calc-form" id="form-log">
+        <label>Weight (kg)<input type="number" name="weight" step="0.1" min="20" max="300"></label>
+        <label>Mood today
+          <select name="mood">
+            <option value="5">Great</option>
+            <option value="4">Good</option>
+            <option value="3" selected>Okay</option>
+            <option value="2">Low</option>
+            <option value="1">Struggling</option>
+          </select>
+        </label>
+        <label>Water (litres)<input type="number" name="water" step="0.1" min="0" max="10"></label>
+        <button class="btn btn-solid" type="submit">Add today's entry</button>
+      </form>
+
+      <div class="dash-grid two-col">
+        <div class="panel">
+          <h3>Weight trend</h3>
+          <canvas id="progress-weight-chart" height="180"></canvas>
+        </div>
+        <div class="panel">
+          <h3>Mood trend</h3>
+          <canvas id="progress-mood-chart" height="180"></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Log history</h3>
+        <table class="log-table" id="log-table">
+          <thead><tr><th>Date</th><th>Weight</th><th>Mood</th><th>Water</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- REMINDERS -->
+    <div class="view" id="view-reminders">
+      <header class="view-head">
+        <div><h1>Reminders</h1><p class="view-sub">Runs while this tab is open, using your browser's own notifications.</p></div>
+      </header>
+
+      <div class="panel" id="notif-permission-panel">
+        <p>Allow browser notifications so reminders reach you even when you're not looking at this tab.</p>
+        <button class="btn btn-outline btn-sm" id="notif-permission-btn">Enable notifications</button>
+        <span id="notif-status"></span>
+      </div>
+
+      <form class="calc-form" id="form-reminder">
+        <label>Type
+          <select name="type">
+            <option value="meal">Meal</option>
+            <option value="water">Hydration</option>
+            <option value="workout">Workout</option>
+            <option value="custom">Custom</option>
+          </select>
+        </label>
+        <label>Label<input type="text" name="label" placeholder="e.g. Lunch" maxlength="40"></label>
+        <label>Repeat every (minutes)<input type="number" name="interval" min="5" max="480" value="120" required></label>
+        <button class="btn btn-solid" type="submit">Add reminder</button>
+      </form>
+
+      <div class="panel">
+        <h3>Active reminders</h3>
+        <div id="reminder-list"></div>
+      </div>
+    </div>
+
+    <!-- CHATBOT -->
+    <div class="view" id="view-chatbot">
+      <header class="view-head">
+        <div><h1>Wellness assistant</h1><p class="view-sub">Quick, rule-based answers on everyday fitness &amp; nutrition topics.</p></div>
+      </header>
+
+      <div class="disclaimer-box">This assistant answers general wellness questions. It cannot see your medical history and is not a substitute for a doctor.</div>
+
+      <details class="assistant-settings">
+        <summary>Connect a real AI assistant (optional)</summary>
+        <p class="calc-hint">Paste your own OpenAI API key to get live model answers instead of the built-in rule-based replies. The key is stored only in this browser's local storage and sent directly from your browser to OpenAI — it is <strong>never</strong> written into this site's code or seen by anyone else. For a real public deployment, route this through your own backend instead, so the key never sits in browser storage at all. <strong>Never share an API key in chat, email or a support ticket — if one is ever exposed like that, revoke it immediately in your OpenAI dashboard.</strong></p>
+        <form id="form-api-key" class="calc-form">
+          <label>OpenAI API key<input type="password" id="api-key-input" placeholder="sk-…" autocomplete="off"></label>
+          <button class="btn btn-outline btn-sm" type="submit">Save key</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="clear-api-key">Remove saved key</button>
+        </form>
+        <p id="api-key-status" class="calc-hint"></p>
+      </details>
+
+      <div class="chat-window" id="chat-window"></div>
+      <div class="chat-suggestions" id="chat-suggestions"></div>
+      <form class="chat-input-row" id="form-chat">
+        <input type="text" id="chat-input" placeholder="Ask about protein, sleep, water, stress…" autocomplete="off">
+        <button class="btn btn-solid" type="submit">Send</button>
+      </form>
+    </div>
+
+  </section>
+</div>
+
+<!-- ============ AUTH MODAL ============ -->
+<div class="modal-overlay hidden" id="auth-overlay">
+  <div class="modal auth-modal">
+    <button class="modal-close" id="auth-close">×</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-auth="login">Log in</button>
+      <button class="auth-tab" data-auth="register">Create account</button>
+    </div>
+
+    <form id="form-login" class="auth-form active">
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+      <p class="form-error" id="login-error"></p>
+      <button class="btn btn-solid btn-block" type="submit">Log in</button>
+    </form>
+
+    <form id="form-register" class="auth-form">
+      <label>Name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Password (min. 6 characters)<input type="password" name="password" minlength="6" required autocomplete="new-password"></label>
+      <label>Age<input type="number" name="age" min="10" max="100" required></label>
+      <label>Gender
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other / prefer not to say</option>
+        </select>
+      </label>
+      <p class="form-error" id="register-error"></p>
+      <button class="btn btn-solid btn-block" type="submit">Create account</button>
+    </form>
+
+    <p class="auth-footnote">Stored securely in your browser only — see the README for how to swap in a real backend (Firebase / Node.js).</p>
+  </div>
+</div>
+
+<!-- ============ ONBOARDING WIZARD (shown once, right after registering) ============ -->
+<div class="modal-overlay hidden" id="onboarding-overlay">
+  <div class="modal onboarding-modal">
+    <div class="onboarding-progress"><span id="ob-progress-label">Step 1 of 4</span><div class="ob-progress-bar"><div id="ob-progress-fill"></div></div></div>
+
+    <div class="ob-step active" data-step="1">
+      <h3>First, your BMI</h3>
+      <p class="calc-hint">Two numbers, and we'll know where to start.</p>
+      <form id="ob-form-bmi" class="calc-form">
+        <label>Height (cm)<input type="number" name="height" min="90" max="250" required></label>
+        <label>Weight (kg)<input type="number" name="weight" step="0.1" min="20" max="300" required></label>
+        <button class="btn btn-solid" type="submit">Calculate &amp; continue</button>
+      </form>
+      <div id="ob-result-bmi"></div>
+    </div>
+
+    <div class="ob-step" data-step="2">
+      <h3>Now, body fat % <span class="ob-optional">(optional — skip if you'd rather not measure)</span></h3>
+      <form id="ob-form-bodyfat" class="calc-form">
+        <label>Gender<select name="gender"><option value="male">Male</option><option value="female">Female</option></select></label>
+        <label>Neck (cm)<input type="number" name="neck" min="20" max="60" step="0.1"></label>
+        <label>Waist (cm)<input type="number" name="waist" min="40" max="200" step="0.1"></label>
+        <label class="ob-hip-field only-female">Hip (cm)<input type="number" name="hip" min="40" max="200" step="0.1"></label>
+        <button class="btn btn-solid" type="submit">Calculate &amp; continue</button>
+      </form>
+      <div id="ob-result-bodyfat"></div>
+      <button class="btn btn-ghost btn-sm" id="ob-skip-2">Skip this step</button>
+    </div>
+
+    <div class="ob-step" data-step="3">
+      <h3>Your daily calorie needs</h3>
+      <form id="ob-form-calories" class="calc-form">
+        <label>Age<input type="number" name="age" min="14" max="90" required></label>
+        <label>Activity level
+          <select name="activity">
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Light</option>
+            <option value="1.55" selected>Moderate</option>
+            <option value="1.725">Active</option>
+            <option value="1.9">Very active</option>
+          </select>
+        </label>
+        <button class="btn btn-solid" type="submit">Calculate &amp; continue</button>
+      </form>
+      <div id="ob-result-calories"></div>
+    </div>
+
+    <div class="ob-step" data-step="4">
+      <h3>One last thing</h3>
+      <form id="ob-form-goal" class="calc-form">
+        <label>Profession / daily movement
+          <select name="profession"><option value="desk">Desk job</option><option value="mixed">Mixed</option><option value="manual">Manual labour</option></select>
+        </label>
+        <label>Diet preference
+          <select name="diet"><option value="veg">Vegetarian</option><option value="nonveg">Non-vegetarian</option><option value="vegan">Vegan</option></select>
+        </label>
+        <label>Goal<select name="goal"><option value="lose">Lose weight</option><option value="maintain">Maintain</option><option value="gain">Gain / build muscle</option></select></label>
+        <label>Days/week you can train<select name="days"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>
+        <button class="btn btn-solid" type="submit">Build my first AI plan</button>
+      </form>
+    </div>
+
+    <div class="ob-step" data-step="done">
+      <h3>Your plan is ready</h3>
+      <p>HealthEthics has drafted a diet structure and a weekly training split from what you just entered. It'll quietly re-check and refresh itself as you log progress.</p>
+      <button class="btn btn-solid btn-block" id="ob-finish-btn">Go to my dashboard</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/health-tools.js"></script>
+<script src="js/ai-engine.js"></script>
+<script src="js/tracking.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/pose-coach.js"></script>
+<script src="js/assistant.js"></script>
+</body>
+</html>
